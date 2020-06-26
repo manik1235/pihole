@@ -1,14 +1,15 @@
 version: "3"
 services:
   pihole:
-    build: .
+    image: pihole/pihole:latest
     deploy:
       replicas: 3
       restart_policy:
         condition: on-failure
         max_attempts: 3
     volumes:
-      - "pihole:/etc"
+      - "pihole-etc-pihole:/etc/pihole"
+      - "pihole-etc-dnsmasq-d:/etc/dnsmasq.d"
     ports:
       - "53:53/tcp"
       - "53:53/udp"
@@ -25,4 +26,5 @@ services:
       - 1.1.1.1
 
 volumes:
-  pihole:
+  pihole-etc-pihole:
+  pihole-etc-dnsmasq-d:
