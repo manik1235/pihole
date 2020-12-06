@@ -16,7 +16,7 @@ services:
     # network_mode: "host"
     environment:
       # enter your docker host IP here
-      ServerIP: 10.200.128.111
+      ServerIP: 10.200.128.112
       # IPv6 Address if your network supports it
       #ServerIPv6: 
       # jwilder/proxy envs, see readme for more info
