@@ -31,7 +31,7 @@ services:
       # to your docker host ip address
       #  - 'pihole.yourdomain.local:192.168.1.101'
     volumes:
-      - "pihole-etc-pihole:/etc/pihole"
+      - "./data/pihole:/etc/pihole"
       - "pihole-etc-dnsmasq-d:/etc/dnsmasq.d"
       # WARNING: if this log don't exist as a file on the host already
       # docker will try to create a directory in it's place making for lots of errors
@@ -39,5 +39,4 @@ services:
     restart: always
 
 volumes:
-  pihole-etc-pihole:
   pihole-etc-dnsmasq-d:
